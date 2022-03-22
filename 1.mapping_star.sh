@@ -14,12 +14,15 @@
 module load roslin/star/2.5.3a
 prefix=$1
 
-listR1=/exports/cmvm/eddie/eb/groups/smith_grp/Zhou_wu/Fastq/${prefix}/${prefix}_R1.fastq.gz 
-listR2=/exports/cmvm/eddie/eb/groups/smith_grp/Zhou_wu/Fastq/${prefix}/${prefix}_R2.fastq.gz
+#Input
+listR1=<path to Fastq>/${prefix}/${prefix}_R1.fastq.gz 
+listR2=<path to Fastq>/${prefix}/${prefix}_R2.fastq.gz
 output=/exports/cmvm/eddie/eb/groups/smith_grp/Zhou_wu/mapping/${prefix}
 
 ls  ${listR1} ${listR2}
 echo ${output}
+mkdir -p /exports/cmvm/eddie/eb/groups/smith_grp/Zhou_wu/mapping
+
 #Prepare the STAR index first: GRCg6a
 
 STAR --genomeDir GRCg6a \
