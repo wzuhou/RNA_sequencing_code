@@ -9,6 +9,8 @@ Annotation: gtf
 
 ## Pipelines
 
+### 0 QC fastqc
+
 ### 1 STAR index & mapping
 
 ### 2 featurecounts quantification
