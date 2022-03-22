@@ -30,10 +30,9 @@ STAR \
 ##################################################################
 #Mapping usage
 #for prefix in `cat name.list25`;do sh 1.mapping_star.sh $prefix; done
+#Input2
 
 prefix=$1
-
-#Input2
 listR1=<path to Fastq>/${prefix}/${prefix}_R1.fastq.gz 
 listR2=<path to Fastq>/${prefix}/${prefix}_R2.fastq.gz
 output=/exports/cmvm/eddie/eb/groups/smith_grp/Zhou_wu/mapping/${prefix}
