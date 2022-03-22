@@ -13,4 +13,8 @@ Annotation: gtf
 
 ### 2 featurecounts quantification
 
-### 3
+### 3 DEG_pre-process
+
+### 4 DEG_DESeq2
+
+### 5 Visualization (heatmap, PCA, correlation)
