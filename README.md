@@ -25,7 +25,7 @@ Annotation: gtf
 
 
 
-(RNA sequencing: the teenage years)[https://www.nature.com/articles/s41576-019-0150-2]
+[RNA sequencing: the teenage years](https://www.nature.com/articles/s41576-019-0150-2)
 
 STAR : https://github.com/alexdobin/STAR
 
