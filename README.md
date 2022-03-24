@@ -21,19 +21,16 @@ Annotation: gtf
 
 ### 5 Visualization (heatmap, PCA, correlation)
 
-### Useful manual links
-
-
+### Useful links
 
 [RNA sequencing: the teenage years](https://www.nature.com/articles/s41576-019-0150-2)
 
-STAR : https://github.com/alexdobin/STAR
+[DESeq2 tutorial](https://lashlock.github.io/compbio/R_presentation.html)
 
-Manul of STAR: https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
+[STAR](https://github.com/alexdobin/STAR)
 
-Ensembl reference genome download:  http://www.ensembl.org/Gallus_gallus/Info/Index
+[Manul of STAR](https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf)
 
-Featurecounts manual: https://bioconductor.org/packages/release/bioc/vignettes/Rsubread/inst/doc/SubreadUsersGuide.pdf
+[Featurecounts manual](https://bioconductor.org/packages/release/bioc/vignettes/Rsubread/inst/doc/SubreadUsersGuide.pdf)
 
 
-DESeq2 tutorial: https://lashlock.github.io/compbio/R_presentation.html
