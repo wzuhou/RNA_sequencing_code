@@ -14,7 +14,7 @@ done >>${prefix}_mulFQ
 printf " ">>${prefix}_mulFQ
 #READS 2
 for j in `less ${prefix}_list`; do \
-printf  "${prefix}/paired_${i}2.fastq.gz,"
+printf  "${prefix}/paired_${j}2.fastq.gz,"
 done >>${prefix}_mulFQ
 sed -i 's/\, / /' ${prefix}_mulFQ
 sed -i 's/\,$/ /' ${prefix}_mulFQ
