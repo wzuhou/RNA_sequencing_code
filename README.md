@@ -19,7 +19,7 @@ Annotation: gtf
 
 ### 4 DEG_DESeq2
 
-### 5 Visualization (heatmap, PCA, correlation)
+### 5 Visualization (heatmap, PCA, correlation, volcano plot)
 
 ### Useful links
 
