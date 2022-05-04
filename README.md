@@ -15,11 +15,11 @@ Annotation: gtf
 
 ### 2 featurecounts quantification
 
-### 3 DEG_pre-process
+### 3 DEG_pre-process -R
 
-### 4 DEG_DESeq2
+### 4 DEG_DESeq2 -R
 
-### 5 Visualization (heatmap, PCA, correlation, volcano plot)
+### 5 Visualization -R (heatmap, PCA, correlation, volcano plot)
 
 ### Useful links
 
