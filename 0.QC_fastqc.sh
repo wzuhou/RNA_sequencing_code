@@ -7,7 +7,7 @@
 #$ -pe sharedmem 8
 #$ -M zwu33@ed.ac.uk
 #$ -m baes
-#$ -P roslin_smith_grp
+
 
 
 # If you plan to load any software modules, then you must first initialise the modules framework.
