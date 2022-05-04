@@ -6,7 +6,7 @@
 #$ -l h_rt=16:00:00
 #$ -M zwu33@ed.ac.uk
 #$ -m baes
-#$ -P roslin_smith_grp
+
 
 date
 featurecounts=/exports/cmvm/eddie/eb/groups/smith_grp/Zhou_wu/Install/subread-2.0.0-Linux-x86_64/bin/featureCounts
