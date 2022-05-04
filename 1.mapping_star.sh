@@ -5,7 +5,7 @@
 #$ -l h_rt=10:00:00
 #$ -l h_vmem=16G
 #$ -pe sharedmem 10
-#$ -P roslin_smith_grp
+
 
 . /etc/profile.d/modules.sh
 module load roslin/star/2.5.3a
