@@ -9,7 +9,7 @@ Annotation: gtf
 
 ## Pipelines
 
-### 0 QC fastqc
+### 0 QC fastqc & Trimmomatic
 
 ### 1 STAR index & mapping
 
