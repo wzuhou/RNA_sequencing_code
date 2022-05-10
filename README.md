@@ -25,6 +25,10 @@ Annotation: gtf
 
 [RNA sequencing: the teenage years](https://www.nature.com/articles/s41576-019-0150-2)
 
+[Fastqc modules](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/)
+
+[Trimmomatic Manual](http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf)
+
 [DESeq2 tutorial](https://lashlock.github.io/compbio/R_presentation.html)
 
 [STAR](https://github.com/alexdobin/STAR)
