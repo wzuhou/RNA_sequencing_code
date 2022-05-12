@@ -29,9 +29,9 @@ echo "inputfile Forward R1: $input1 and Reverse R2 $input2"
 
 #Create folders for Trimmed reads
 mkdir -p Trim
+#If the adapter file does not exist, download it to current dir
 if [ ! -f TruSeq3-PE.fa ];then
 cp /exports/igmm/software/pkg/el7/apps/trimmomatic/0.36/adapters/*.fa ./
 fi
- 
 #Run Trimmomatic
 trimmomatic PE -threads 6 -phred33 ${dir}/$input1 ${dir}/$input2 Trim/paired_$input1 Trim/unpaired_$input1 Trim/paired_$input2 Trim/unpaired_$input2 ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
