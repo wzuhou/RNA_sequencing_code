@@ -35,3 +35,4 @@ cp /exports/igmm/software/pkg/el7/apps/trimmomatic/0.36/adapters/*.fa ./
 fi
 #Run Trimmomatic
 trimmomatic PE -threads 6 -phred33 ${dir}/$input1 ${dir}/$input2 Trim/paired_$input1 Trim/unpaired_$input1 Trim/paired_$input2 Trim/unpaired_$input2 ILLUMINACLIP:TruSeq3-PE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+#######################END########################################
