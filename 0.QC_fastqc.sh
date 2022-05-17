@@ -26,7 +26,12 @@ mkdir -p fastqc
 fastqc <path_to_file>/*fastq.gz -o fastqc/ -t 8
 
 # Multiqc 
-module load anaconda
-source activate py37
+#module load anaconda
+#source activate py37
+
+module load roslin/conda/4.9.1
+source /exports/applications/apps/community/roslin/conda/4.9.1/etc/profile.d/conda.sh
+conda activate multiqc
+export OMP_NUM_THREADS=1 ###Use the number of core you have requested
 multiqc fastqc/ -o multiqc -n MultiQC_output
 
