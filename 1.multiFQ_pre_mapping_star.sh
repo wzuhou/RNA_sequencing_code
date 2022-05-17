@@ -1,6 +1,8 @@
 #!/bin/bash
 #make sample list
 for prefix in `less LALO_RNA_list.txt`; do grep $prefix Fastq_list_1|cut -f 2 >${prefix}_list;done
+################################
+#This code is optional when you have multiple fastqc files for one individual
 
 #make mulFQ file for mapping
 for prefix in `less LALO_RNA_list.txt`;do \
