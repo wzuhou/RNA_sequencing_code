@@ -1,4 +1,4 @@
-# COnvert featurecounts to TPM
+# Convert featurecounts to TPM
 a <- fread("M:/ROSLIN/RNA_Seq_LALO/Output_samples.txt_Galgal7_unmapped",header=T)
 meta <- a[,1:6]
 cts <- a[,7:ncol(a)]
