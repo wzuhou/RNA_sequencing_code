@@ -2,12 +2,11 @@
 #RNA-seq Work Flow
 #Stage
 ################
-{  library(data.table)
+{ library(data.table)
   library(stringr)
   suppressMessages(library(DESeq2))
   library(dplyr)
-  library(tidyr)
-}
+  library(tidyr)}
 
 TS="ADRE"
 TS="PIT"
@@ -30,8 +29,8 @@ TISSUE=c("ADRE","PIT","FAT")#
 #----------------------------------------------
 # ifelse: within the folder of tissue, by condition
 #----------------------------------------------
-source('M:/ROSLIN/RNA_2LALO/Codes/My_RNA_plot_functions.R')
-#source('M:/ROSLIN/RNA_2LALO/Codes/My_RNA_plot_functions_simple.R')
+source('My_RNA_plot_functions.R')
+#source('My_RNA_plot_functions_simple.R')
 
 { 
   if (exists('TISSUE')) {
@@ -48,7 +47,7 @@ source('M:/ROSLIN/RNA_2LALO/Codes/My_RNA_plot_functions.R')
     #1.Read in Coldata
     #-----------------
     { #Analyses in container
-      samples <- read.table("M:/ROSLIN/RNA_2LALO/Sample_LALO2_ID_Tissue.txt", header = TRUE,stringsAsFactors = T)
+      samples <- read.table("RNA_2LALO/Sample_LALO2_ID_Tissue.txt", header = TRUE,stringsAsFactors = T)
       #Filtering for Tissue
       if (exists("TS")){
         samples=samples[samples$Tissue==TS,] #select Tissue
@@ -80,10 +79,6 @@ source('M:/ROSLIN/RNA_2LALO/Codes/My_RNA_plot_functions.R')
     #-----------------
     #2.Read in featurecounts output 
     #-----------------
-    #a <- fread("M:/ROSLIN/RNA_2LALO/psiclass08022021_vote_Modified_Gene_name.count",header=T)
-    #a <- fread("M:/ROSLIN/RNA_2LALO/psiclass08022021_vote_Modified_Gene_name.count_Galgal7",header=T)
-    
-    #dont need to read in everytime
     a <- fread("M:/ROSLIN/RNA_2LALO/Output_samples.txt_Galgal7_unmapped",header=T)
     meta <- a[,1:6]
     cts <- a[,7:ncol(a)]
@@ -118,10 +113,10 @@ source('M:/ROSLIN/RNA_2LALO/Codes/My_RNA_plot_functions.R')
     SAMPLEgene <- as.data.frame(apply(exprSet,2, function(x) sum(x>0)))
     names(SAMPLEgene) <- paste0("expressed_gene_count_out_of_",dim(dds)[1])
     SAMPLEgene$Per <- round(SAMPLEgene[,1]/dim(dds)[1],digits=5)
-    write.csv(SAMPLEgene,paste0("M:/ROSLIN/RNA_2LALO/Filter_",TS,"_Ind_expressed_gene_count.csv"),row.names = T)
+    write.csv(SAMPLEgene,paste0("Filter_",TS,"_Ind_expressed_gene_count.csv"),row.names = T)
     
     #  { #Optional Filter for genelist e.g. GWAS genes/DEGs
-    #      geneSet <- read.table("M:/ROSLIN/RNA-seq/F_quantification/E5/Breeds/DPTS//GENE_DEseq2_Vol_E5_DPTS_Volcano_ALL.txt",header=F,col.names="gene_id")
+    #      geneSet <- read.table("GENE_DEseq2_Vol_E5_DPTS_Volcano_ALL.txt",header=F,col.names="gene_id") #Used for bantam
     #    head(geneSet)
     #    keep_geneset <- (rownames(exprSet)%in%geneSet$gene_id)
     #    table(keep_geneset)
@@ -131,11 +126,11 @@ source('M:/ROSLIN/RNA_2LALO/Codes/My_RNA_plot_functions.R')
     dds <- DESeq(dds,minReplicatesForReplace=Inf)###for schijd
     
     #  ###DEGs between PHENOTYPE
-    #source('M:/ROSLIN/RNA_2LALO/Codes/My_RNA_plot_functions.R')
+    #source('My_RNA_plot_functions.R')
     ###########Gene of interest for highlight
     
     GeneOfInterest<-c("FKBP5","COL","PER1","PER2","PER3","SOUL","TBC1D2","CRY1","FMN2","ZP3","TBC1D8",'AMBP','PCK1','UCN3','FBXO32','CPS1','NR1D1','NPC1')
-    #GeneOfInterest<-read.table('M:/ROSLIN/Klebsiella_variicola_RNA/Gene_of_interest.txt',header=F)$V1
+    #GeneOfInterest<-read.table('Gene_of_interest.txt',header=F)$V1
     
     
     ####Interate between conditions
@@ -188,8 +183,8 @@ source('M:/ROSLIN/RNA_2LALO/Codes/My_RNA_plot_functions.R')
     }
     
     # #OUtput 2: Plot volcano and UP/Down regulated
-    #source('M:/ROSLIN/RNA_2LALO/Codes/My_RNA_plot_functions.R')
-    #source('M:/ROSLIN/RNA_2LALO/Codes/My_RNA_plot_functions_simple.R')
+    #source('My_RNA_plot_functions.R')
+    #source('My_RNA_plot_functions_simple.R')
     {
       DEseq_DEG <- DEG
       DEseq_DEG=DEseq_DEG[,c(2,6)] #5: unadjusted P-value 6:Padj
