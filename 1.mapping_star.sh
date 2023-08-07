@@ -9,6 +9,8 @@
 
 . /etc/profile.d/modules.sh
 module load roslin/star/2.5.3a
+export OMP_NUM_THREADS=$NSLOTS
+
 #################################################################
 #Prepare the STAR index first: GRCg6a
 #Usage sh 1.mapping_star.sh
@@ -19,7 +21,7 @@ anno='<path_to_file>/GCF_ABC_genomic.gtf'
 
 #1. basic options to generate genome indices are as follows:
 STAR \
---runThreadN 10 \
+--runThreadN $NSLOTS \
 --runMode genomeGenerate \
 --genomeDir ./GRCg6a \
 --genomeSAindexNbases 10 \
@@ -28,7 +30,8 @@ STAR \
 --sjdbOverhang 149
 
 ##################################################################
-#Mapping usage
+#Mapping usage:
+#For loop
 #for prefix in `cat name.list25`;do sh 1.mapping_star.sh $prefix; done
 
 #Input2
@@ -43,7 +46,7 @@ mkdir -p /exports/cmvm/eddie/eb/groups/smith_grp/Zhou_wu/mapping
 
 #2. Mapping reads to reference 
 STAR --genomeDir GRCg6a \
---runThreadN 10 \
+--runThreadN $NSLOTS \
 --readFilesCommand zcat \
 --readFilesIn ${listR1} ${listR2} \
 --outFilterType BySJout \
