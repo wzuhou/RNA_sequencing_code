@@ -10,10 +10,10 @@ library(dplyr)
 library(tidyr)
 }
 setwd('D:/RNA_Seq_LALO/')
-samples <- read.table("D:/RNA_Seq_LALO/Sample_strip_ID_Tissue.txt", header = TRUE,stringsAsFactors = T)
+samples <- read.table("./Sample_table.txt", header = TRUE,stringsAsFactors = T)
 #head(samples)
 
-a <- fread("D:/RNA_Seq_LALO/psiclass08022021_vote_Modified_Gene_name.count",header=T)
+a <- fread("./featurecounts_output.count",header=T)
 meta <- a[,1:6]
 meta[1:6,1:6]
 cts <- a[,7:ncol(a)]
